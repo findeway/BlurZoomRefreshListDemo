@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics/2.4.0/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="fd39f74f23c7bd9aeafe58c6d988a7329c3e2790">
+        <dex dex="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/pre-dexed/debug/classes-b4f8e53bd2c473bf40818639661df8428480b6d2.jar" />
+    </item>
+    <item
+        jar="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/exploded-aar/TestCrashReport/pulltorefresh/unspecified/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="70735fbceeae9c7dd3b64d936c8f759573027510">
+        <dex dex="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/pre-dexed/debug/classes-a6c4f0963b31ba8a24e6b5c7b1e3b900993c395e.jar" />
+    </item>
+    <item
+        jar="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/exploded-aar/io.fabric.sdk.android/fabric/1.3.4/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="f7dc6b43d7c7f3d94e98531aef88269f9ed2a37b">
+        <dex dex="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/pre-dexed/debug/classes-026cd595d9b1eddf9f597442658dc8f00c275af3.jar" />
+    </item>
+    <item
+        jar="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/beta/1.1.3/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="b7a78990c10481f43cb4909f535ef4f11e60f1ab">
+        <dex dex="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/pre-dexed/debug/classes-481287174fabeccc3982ec4ba0c8855e5e5e9e63.jar" />
+    </item>
+    <item
+        jar="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/crashlytics-core/2.3.3/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="3013d965c748748ec9c7d0d42102e9abd1c9ed91">
+        <dex dex="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/pre-dexed/debug/classes-a3a3b9190ee3cd2f70f3225b7487d696b98a260d.jar" />
+    </item>
+    <item
+        jar="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/exploded-aar/com.crashlytics.sdk.android/answers/1.2.2/jars/classes.jar"
+        jumboMode="false"
+        revision="20.0.0"
+        sha1="c364019628ff5b32e4930334e9db4680829f7115">
+        <dex dex="/Users/dongpengyu/AndroidStudioProjects/TestCrashReport/app/build/intermediates/pre-dexed/debug/classes-947998b65fab7ccde2cbe3f6418512ebe95e4955.jar" />
+    </item>
+
+</items>
