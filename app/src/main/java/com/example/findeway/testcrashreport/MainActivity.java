@@ -105,8 +105,7 @@ public class MainActivity extends Activity{
 
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, adapterData);
         listView.setAdapter(listAdapter);
-
-        listView.getHeaderBackground().setImageResource(R.drawable.boy_background);
+        listView.getHeaderBackground().setImageResource(R.drawable.splash01);
         listView.setHeaderBackground(((BitmapDrawable) listView.getHeaderBackground().getDrawable()).getBitmap());
 
         listView.setOnRefreshListener(new PullToZoomRefreshListView.OnRefreshListener() {

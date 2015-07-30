@@ -37,6 +37,7 @@ public class PullToZoomListView extends ListView implements
     private AbsListView.OnScrollListener mOnScrollListener;
     private ScalingRunnalable mScalingRunnalable;
     private int mScreenHeight;
+    private int mMaxScaleHeight;
     private ImageView mShadow;
     private OnScaleListener mScaleListener;
 
@@ -76,6 +77,7 @@ public class PullToZoomListView extends ListView implements
         ((Activity) paramContext).getWindowManager().getDefaultDisplay()
                 .getMetrics(localDisplayMetrics);
         this.mScreenHeight = localDisplayMetrics.heightPixels;
+        this.mMaxScaleHeight = mScreenHeight;
         this.mHeaderContainer = new FrameLayout(paramContext);
         this.mHeaderImage = new ImageView(paramContext);
         int i = localDisplayMetrics.widthPixels;
@@ -126,6 +128,17 @@ public class PullToZoomListView extends ListView implements
             mHeaderContainer.addView(headerView);
         }
     }
+
+    public void setMaxScaleHeight(int maxScaleHeight)
+    {
+        mMaxScaleHeight = maxScaleHeight;
+    }
+
+    public int getMaxScaleHeight()
+    {
+        return mMaxScaleHeight;
+    }
+
     public boolean onInterceptTouchEvent(MotionEvent paramMotionEvent) {
         return super.onInterceptTouchEvent(paramMotionEvent);
     }
@@ -173,7 +186,7 @@ public class PullToZoomListView extends ListView implements
                 }
                 this.mLastMotionY = paramMotionEvent.getY();
                 this.mActivePointerId = paramMotionEvent.getPointerId(0);
-                this.mMaxScale = (this.mScreenHeight / this.mHeaderHeight);
+                this.mMaxScale = ((float)getMaxScaleHeight() / this.mHeaderHeight);
                 this.mLastScale = (this.mHeaderContainer.getBottom() / this.mHeaderHeight);
                 break;
             case MotionEvent.ACTION_MOVE:
@@ -185,7 +198,7 @@ public class PullToZoomListView extends ListView implements
                 } else {
                     if (this.mLastMotionY == -1.0F)
                         this.mLastMotionY = paramMotionEvent.getY(j);
-                    if (this.mHeaderContainer.getBottom() >= this.mHeaderHeight) {
+                    if (this.mHeaderContainer.getBottom() >= this.mHeaderHeight && this.mHeaderContainer.getBottom() <= getMaxScaleHeight()) {
                         ViewGroup.LayoutParams localLayoutParams = this.mHeaderContainer
                                 .getLayoutParams();
                         float f = ((paramMotionEvent.getY(j) - this.mLastMotionY + this.mHeaderContainer
