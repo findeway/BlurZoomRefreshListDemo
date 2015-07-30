@@ -6,13 +6,16 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.DisplayMetrics;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.MotionEvent;
+import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Interpolator;
 import android.widget.AbsListView;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.ListView;
+import android.widget.TextView;
 
 public class PullToZoomListView extends ListView implements
         AbsListView.OnScrollListener {
@@ -107,7 +110,7 @@ public class PullToZoomListView extends ListView implements
         this.mLastScale = -1.0F;
     }
 
-    public ImageView getHeaderView() {
+    public ImageView getHeaderBackground() {
         return this.mHeaderImage;
     }
 
@@ -116,6 +119,13 @@ public class PullToZoomListView extends ListView implements
         return mHeaderHeight;
     }
 
+    public void addZoomHeaderView(View headerView)
+    {
+        if(mHeaderContainer != null)
+        {
+            mHeaderContainer.addView(headerView);
+        }
+    }
     public boolean onInterceptTouchEvent(MotionEvent paramMotionEvent) {
         return super.onInterceptTouchEvent(paramMotionEvent);
     }

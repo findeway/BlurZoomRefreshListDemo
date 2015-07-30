@@ -1,29 +1,22 @@
 package com.example.findeway.testcrashreport;
 
 import android.app.Activity;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
-import android.view.Gravity;
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AbsListView;
 import android.widget.ArrayAdapter;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.LinearLayout;
 
 import com.crashlytics.android.Crashlytics;
-import com.example.findeway.blur.FastBlur;
 import com.example.findeway.pulltozoomlist.BlurZoomRefreshListView;
 import com.example.findeway.pulltozoomlist.PullToZoomRefreshListView;
-import com.matrixxun.pulltozoomlistsimple.PullToZoomListView;
 
 import java.util.ArrayList;
+import java.util.zip.Inflater;
 
 import io.fabric.sdk.android.Fabric;
 
@@ -113,8 +106,8 @@ public class MainActivity extends Activity{
         listAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, adapterData);
         listView.setAdapter(listAdapter);
 
-        listView.getHeaderView().setImageResource(R.drawable.splash01);
-        listView.setHeaderImage(((BitmapDrawable)listView.getHeaderView().getDrawable()).getBitmap());
+        listView.getHeaderBackground().setImageResource(R.drawable.boy_background);
+        listView.setHeaderBackground(((BitmapDrawable) listView.getHeaderBackground().getDrawable()).getBitmap());
 
         listView.setOnRefreshListener(new PullToZoomRefreshListView.OnRefreshListener() {
             @Override

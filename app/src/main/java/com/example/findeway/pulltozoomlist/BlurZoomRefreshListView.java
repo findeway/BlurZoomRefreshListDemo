@@ -47,37 +47,37 @@ public class BlurZoomRefreshListView extends PullToZoomRefreshListView {
 
     private void initHeaderBlur()
     {
-        getHeaderView().setScaleType(ImageView.ScaleType.CENTER_CROP);
+        getHeaderBackground().setScaleType(ImageView.ScaleType.CENTER_CROP);
         setOnScaleListener(new PullToZoomListView.OnScaleListener() {
             @Override
             public void onScaling(float scale) {
                 for (int index = mBlurArraySize; index >= 0; index--) {
                     if (scale >= 1.0f / mBlurArraySize * index) {
                         if (mBlurBitmapList != null && mBlurBitmapList.size() > index) {
-                            getHeaderView().setImageBitmap(mBlurBitmapList.get(index));
+                            getHeaderBackground().setImageBitmap(mBlurBitmapList.get(index));
                             return;
                         }
                     }
                 }
                 if (mBlurBitmapList != null && mBlurBitmapList.size() > 0) {
-                    getHeaderView().setImageBitmap(mBlurBitmapList.get(0));
+                    getHeaderBackground().setImageBitmap(mBlurBitmapList.get(0));
                 }
             }
 
             @Override
             public void onEndScale() {
                 if (mBlurBitmapList != null && mBlurBitmapList.size() > 0) {
-                    getHeaderView().setImageBitmap(mBlurBitmapList.get(0));
+                    getHeaderBackground().setImageBitmap(mBlurBitmapList.get(0));
                 }
             }
         });
     }
 
-    public void setHeaderImage(Bitmap bitmap)
+    public void setHeaderBackground(Bitmap bitmap)
     {
         mOriginalBitmap = bitmap;
         mHeaderResId = 0;
-        getHeaderView().setImageBitmap(mOriginalBitmap);
+        getHeaderBackground().setImageBitmap(mOriginalBitmap);
         mBlurBitmapList.clear();
         new AsyncTask<Void,Void,Bitmap>(){
             @Override
@@ -90,16 +90,16 @@ public class BlurZoomRefreshListView extends PullToZoomRefreshListView {
             @Override
             protected void onPostExecute(Bitmap bitmap) {
                 super.onPostExecute(bitmap);
-                getHeaderView().setImageBitmap(bitmap);
+                getHeaderBackground().setImageBitmap(bitmap);
                 preloadBlurBitmapList();
             }
         }.execute();
     }
 
-    public void setHeaderImage(int resId)
+    public void setHeaderBackground(int resId)
     {
         mHeaderResId = resId;
-        getHeaderView().setImageResource(mHeaderResId);
+        getHeaderBackground().setImageResource(mHeaderResId);
         mBlurBitmapList.clear();
         new AsyncTask<Void,Void,Bitmap>(){
             @Override
@@ -113,7 +113,7 @@ public class BlurZoomRefreshListView extends PullToZoomRefreshListView {
             @Override
             protected void onPostExecute(Bitmap bitmap) {
                 super.onPostExecute(bitmap);
-                getHeaderView().setImageBitmap(bitmap);
+                getHeaderBackground().setImageBitmap(bitmap);
                 preloadBlurBitmapList();
             }
         }.execute();
